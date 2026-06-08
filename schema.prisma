@@ -1,0 +1,116 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  name         String
+  passwordHash String   @map("password_hash")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  meetingsCreated  Meeting[]           @relation("CreatedMeetings")
+  participations   MeetingParticipant[]
+  chatMessages     ChatMessage[]
+
+  @@map("User")
+}
+
+model Meeting {
+  id           String   @id @default(uuid())
+  title        String
+  date         String?
+  startTime    DateTime?
+  endTime      DateTime?
+  status       String   @default("scheduled") // scheduled | in_progress | completed | cancelled
+  backgroundInfo String? @map("background_info")
+  agenda       String?
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  creatorId     String               @map("creator_id")
+  creator       User                 @relation("CreatedMeetings", fields: [creatorId], references: [id])
+  participants  MeetingParticipant[]
+  summaries     MeetingSummary[]
+  actionItems   ActionItem[]
+  chatMessages  ChatMessage[]
+  transcripts   TranscriptionSegment[]
+
+  @@map("Meeting")
+}
+
+model MeetingParticipant {
+  id        String   @id @default(uuid())
+  role      String   @default("guest") // host | guest | audience
+  isSpeaker Boolean  @default(false) @map("is_speaker")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  meetingId String  @map("meeting_id")
+  userId    String  @map("user_id")
+  meeting   Meeting @relation(fields: [meetingId], references: [id], onDelete: Cascade)
+  user      User    @relation(fields: [userId], references: [id])
+
+  @@unique([meetingId, userId])
+  @@map("MeetingParticipant")
+}
+
+model MeetingSummary {
+  id           String   @id @default(uuid())
+  meetingId    String   @map("meeting_id")
+  summaryType  String   @map("summary_type")
+  content      String
+  generatedAt  DateTime @default(now()) @map("generated_at")
+  modelVersion String?  @map("model_version")
+  meeting      Meeting  @relation(fields: [meetingId], references: [id], onDelete: Cascade)
+
+  @@map("MeetingSummary")
+}
+
+model ActionItem {
+  id               String    @id @default(uuid())
+  meetingId        String    @map("meeting_id")
+  description      String
+  assigneeName     String?   @map("assignee_name")
+  assigneeUserId   String?   @map("assignee_user_id")
+  dueDate          DateTime? @map("due_date")
+  status           String    @default("open")
+  sourceSegmentId  BigInt?   @map("source_segment_id")
+  createdAt        DateTime  @default(now()) @map("created_at")
+  meeting          Meeting   @relation(fields: [meetingId], references: [id], onDelete: Cascade)
+
+  @@map("ActionItem")
+}
+
+model ChatMessage {
+  id        String   @id @default(uuid())
+  meetingId String   @map("meeting_id")
+  userId    String   @map("user_id")
+  userName  String   @map("user_name")
+  content   String
+  createdAt DateTime @default(now()) @map("created_at")
+
+  meeting   Meeting  @relation(fields: [meetingId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@map("ChatMessage")
+}
+
+model TranscriptionSegment {
+  id           String   @id @default(uuid())
+  meetingId    String   @map("meeting_id")
+  speakerLabel String   @map("speaker_label")
+  text         String
+  startTimeMs  BigInt   @map("start_time_ms")
+  endTimeMs    BigInt   @map("end_time_ms")
+  isFinal      Boolean  @default(true) @map("is_final")
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  meeting      Meeting  @relation(fields: [meetingId], references: [id], onDelete: Cascade)
+
+  @@map("TranscriptionSegment")
+}
