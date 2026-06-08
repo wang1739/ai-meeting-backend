@@ -12,7 +12,7 @@ export declare class TranscriptController {
         startTimeMs: bigint;
         endTimeMs: bigint;
         isFinal: boolean;
-    } | import("@prisma/client").Prisma.BatchPayload>;
+    } | import(".prisma/client").Prisma.BatchPayload>;
     findAll(meetingId: string): Promise<{
         startTimeMs: number;
         endTimeMs: number;

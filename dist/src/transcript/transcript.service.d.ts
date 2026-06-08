@@ -13,7 +13,7 @@ export declare class TranscriptService {
         endTimeMs: bigint;
         isFinal: boolean;
     }>;
-    createBatch(meetingId: string, dtos: CreateTranscriptDto[]): Promise<import("@prisma/client").Prisma.BatchPayload>;
+    createBatch(meetingId: string, dtos: CreateTranscriptDto[]): Promise<import(".prisma/client").Prisma.BatchPayload>;
     findAll(meetingId: string): Promise<{
         startTimeMs: number;
         endTimeMs: number;
