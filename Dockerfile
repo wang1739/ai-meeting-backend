@@ -13,9 +13,6 @@ RUN npm ci
 
 COPY . .
 
-# 生成 Prisma Client
-RUN npx prisma generate
-
 # 构建 NestJS 应用
 RUN npm run build
 
