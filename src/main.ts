@@ -4,13 +4,13 @@ import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
   const whitelist = [
     'http://localhost:5173',
     'https://ai-meeting-frontend.vercel.app',
   ];
   app.enableCors({
     origin: (origin, callback) => {
-      // 允许无 origin 的请求（如 Postman、curl）
       if (!origin || whitelist.includes(origin)) {
         callback(null, true);
       } else {
@@ -19,8 +19,14 @@ async function bootstrap() {
     },
     credentials: true,
   });
-  app.setGlobalPrefix('api');
+
+  app.setGlobalPrefix('api'); // 你要保留 /api，没问题
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
-  await app.listen(3000);
+
+  // ✅ 修复：用 Railway 的 PORT + 监听 0.0.0.0
+  const port = process.env.PORT || 3000;
+  await app.listen(port, '0.0.0.0');
+
+  console.log('Running on port:', port);
 }
 bootstrap();

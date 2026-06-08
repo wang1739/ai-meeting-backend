@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: ai-meeting-backend
+    env: node
+    buildCommand: npm install && npx prisma generate && npm run build
+    startCommand: npx prisma migrate deploy && node dist/src/main.js
+    envVars:
+      - key: JWT_SECRET
+        value: k3X!pL9$mW2@qR7zT5
+      - key: OPENAI_API_KEY
+        value: sk-sk-da2eebd757f84d899997c382f4b5171f
+      - key: PORT
+        value: "3000"
