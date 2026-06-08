@@ -7,6 +7,7 @@ import { MeetingReviewModule } from './meeting-review/meeting-review.module';
 import { AiModule } from './ai/ai.module';
 import { ChatModule } from './chat/chat.module';
 import { TranscriptModule } from './transcript/transcript.module';
+import { ScheduleController } from './schedule/schedule.controller';
 
 @Module({
   imports: [
@@ -19,5 +20,6 @@ import { TranscriptModule } from './transcript/transcript.module';
     ChatModule,
     TranscriptModule,
   ],
+  controllers: [ScheduleController],
 })
 export class AppModule {}
