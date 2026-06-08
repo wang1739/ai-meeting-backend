@@ -11,6 +11,8 @@ COPY prisma/ ./prisma/
 
 RUN npm ci
 
+RUN chmod +x node_modules/.bin/*
+
 COPY . .
 
 # 构建 NestJS 应用
