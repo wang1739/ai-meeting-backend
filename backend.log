@@ -1,0 +1,30 @@
+[32m[Nest] 24452  - [39m2026/06/07 11:11:28 [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:28 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +13ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:28 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPrismaModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:28 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPassportModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:28 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:28 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +2ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:28 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:28 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:28 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mMeetingModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:28 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mMeetingReviewModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:28 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:28 [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAiModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:29 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/api/auth}:[39m[38;5;3m +859ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:29 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/auth/register, POST} route[39m[38;5;3m +3ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:29 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/auth/login, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:29 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mMeetingController {/api/meetings}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:29 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/meetings, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:29 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/meetings, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:29 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/meetings/action-items/stats, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:29 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/meetings/stats, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:29 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/meetings/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:29 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/meetings/:id/end, PATCH} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:29 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/meetings/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:29 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mMeetingReviewController {/api/meetings}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:29 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/meetings/:id/summary, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:29 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/meetings/:id/action-items, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:29 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/meetings/:id/action-items/:itemId, PATCH} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:29 [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAiController {/api/meetings}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:29 [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api/meetings/:id/generate-summary, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 24452  - [39m2026/06/07 11:11:29 [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +285ms[39m
